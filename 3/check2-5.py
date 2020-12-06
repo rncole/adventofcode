@@ -37,5 +37,5 @@ while i < len:
 #    print(line)
     i += 64
 
-print "Trees Found: ",tc
+print("Trees Found: ",tc)
 
