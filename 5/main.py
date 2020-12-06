@@ -19,7 +19,7 @@
 infile = open('input.txt', 'r')
 newlineset = set()
 lineset = set()
-lineintset = set()
+# lineintset = set()
 
 with infile as f:
     for line in f:
