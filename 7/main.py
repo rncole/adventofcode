@@ -65,8 +65,6 @@ while recursion_complete == 0:
         bag_recursion_count_diff_prev = bag_recursion_count_diff
         # print(bag_recursion_count)
 
-recursion_complete = 0
-
 print("\nTotal Bags:",len(outer_bag))
 outer_cont_sg = list(dict.fromkeys(outer_cont_sg))
 print("Contain Shiny Gold:",len(outer_cont_sg))
