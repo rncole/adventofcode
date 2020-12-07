@@ -74,6 +74,8 @@ bag_set = ['shiny gold']
 bag_set_qty = []
 recursion_complete = 0
 bag_recursion_count = len(outer_cont_sg)
+bag_recursion_count_diff = 0
+bag_recursion_count_diff_prev = 0
 
 while recursion_complete == 0:
     for i, each in enumerate(outer_bag):
@@ -86,10 +88,13 @@ while recursion_complete == 0:
                 bag_set_qty_tmpval = outer_bag[i][1][j][0]
                 # print("val:",bag_set_qty_tmpval)
                 # print(outer_bag[i][0])
-                if outer_bag[i][0] != 'shiny gold':
-                    # print(bag_set_qty_tmpval)
+                # if outer_bag[i][0] != 'shiny gold':
+                print(bag_set_qty_tmpval)
+                print(outer_bag[i][1][j][1])
                     # bag_set_qty_tmpval_int = int(bag_set_qty_tmpval[1])
-                    bag_set_qty.append(bag_set_qty_tmpval)
+                    # if bag_set_qty_tmpval == []:
+                    #     bag_set_qty_tmpval = [1]
+                bag_set_qty.append(bag_set_qty_tmpval)
                 # print("int:",bag_set_qty_tmpval_int)
                 # print(bag_set)
             j = j+1
@@ -104,7 +109,7 @@ while recursion_complete == 0:
         # print(bag_recursion_count)
 # print(bag_set)
 # print(bag_set_qty)
-# print(bag_set_qty)
+print(bag_set_qty)
 bag_set_qty_sum = functools.reduce(lambda a,b: a + b,bag_set_qty)
 bag_set_qty_sum = functools.reduce(lambda a,b: a + b,bag_set_qty_sum)
-print("Bags inside Shiny Gold:",bag_set_qty_sum-1)
+print("Bags inside Shiny Gold:",bag_set_qty_sum)
