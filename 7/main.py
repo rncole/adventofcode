@@ -1,4 +1,5 @@
 # Advent of Code Day 7 - issues in luggage processing
+
 import functools
 
 infile = open('input.txt','r')
@@ -68,3 +69,42 @@ while recursion_complete == 0:
 print("\nTotal Bags:",len(outer_bag))
 outer_cont_sg = list(dict.fromkeys(outer_cont_sg))
 print("Contain Shiny Gold:",len(outer_cont_sg))
+
+bag_set = ['shiny gold']
+bag_set_qty = []
+recursion_complete = 0
+bag_recursion_count = len(outer_cont_sg)
+
+while recursion_complete == 0:
+    for i, each in enumerate(outer_bag):
+        bag_set_tmp_qty = len(outer_bag[i][1])
+        # print(bag_set_tmp_qty)
+        j = 0
+        while j < bag_set_tmp_qty:
+            if outer_bag[i][0] in bag_set:
+                bag_set.append(outer_bag[i][1][j][1])
+                bag_set_qty_tmpval = outer_bag[i][1][j][0]
+                # print("val:",bag_set_qty_tmpval)
+                # print(outer_bag[i][0])
+                if outer_bag[i][0] != 'shiny gold':
+                    # print(bag_set_qty_tmpval)
+                    # bag_set_qty_tmpval_int = int(bag_set_qty_tmpval[1])
+                    bag_set_qty.append(bag_set_qty_tmpval)
+                # print("int:",bag_set_qty_tmpval_int)
+                # print(bag_set)
+            j = j+1
+            bag_recursion_count_diff = len(bag_set) - bag_recursion_count
+
+    if bag_recursion_count_diff == bag_recursion_count_diff_prev:
+        recursion_complete = 1
+    else:
+        bag_set = list(dict.fromkeys(bag_set))
+        bag_recursion_count = len(bag_set)
+        bag_recursion_count_diff_prev = bag_recursion_count_diff
+        # print(bag_recursion_count)
+# print(bag_set)
+# print(bag_set_qty)
+# print(bag_set_qty)
+bag_set_qty_sum = functools.reduce(lambda a,b: a + b,bag_set_qty)
+bag_set_qty_sum = functools.reduce(lambda a,b: a + b,bag_set_qty_sum)
+print("Bags inside Shiny Gold:",bag_set_qty_sum-1)
