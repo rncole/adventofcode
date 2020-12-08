@@ -70,7 +70,10 @@ print("\nTotal Bags:",len(outer_bag))
 outer_cont_sg = list(dict.fromkeys(outer_cont_sg))
 print("Contain Shiny Gold:",len(outer_cont_sg))
 
-bag_set = ['shiny gold']
+bag_set_outermost = ['shiny gold']
+bag_set_middle = []
+bag_set_innermost = []
+bag_set_tmp = bag_set_outermost
 bag_set_qty = []
 recursion_complete = 0
 bag_recursion_count = len(outer_cont_sg)
@@ -79,18 +82,19 @@ bag_recursion_count_diff_prev = 0
 
 while recursion_complete == 0:
     for i, each in enumerate(outer_bag):
-        bag_set_tmp_qty = len(outer_bag[i][1])
+        # bag_set_tmp_qty = len(outer_bag[i][1])
         # print(bag_set_tmp_qty)
         j = 0
-        while j < bag_set_tmp_qty:
-            if outer_bag[i][0] in bag_set:
-                bag_set.append(outer_bag[i][1][j][1])
+        while j < len(outer_bag[i][1]):
+            if outer_bag[i][0] in bag_set_tmp:
+                bag_set_tmp = outer_bag[i][1][j][1]
                 bag_set_qty_tmpval = outer_bag[i][1][j][0]
                 # print("val:",bag_set_qty_tmpval)
                 # print(outer_bag[i][0])
                 # if outer_bag[i][0] != 'shiny gold':
+                print(bag_set_tmp)
                 print(bag_set_qty_tmpval)
-                print(outer_bag[i][1][j][1])
+                # print(outer_bag[i][1][j][1])
                     # bag_set_qty_tmpval_int = int(bag_set_qty_tmpval[1])
                     # if bag_set_qty_tmpval == []:
                     #     bag_set_qty_tmpval = [1]
