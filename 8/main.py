@@ -18,15 +18,13 @@
 # is executed next.
 
 import check_data
-
 line_mod = 0
-terminate = False
 
-print('Part 1 Accumulator Count:',check_data.check_data(0)[0])
+print('Part 1 Accumulator Count:',check_data.check_data(line_mod,1)[0])
 
-while terminate is False:
-    if check_data.check_data(line_mod)[1] == 0:
-        print('Part 2 Accumulator Count:',check_data.check_data(line_mod)[0])
-        terminate = True
+while True:
+    if check_data.check_data(line_mod,0)[1] == 0:
+        print('Part 2 Accumulator Count:',check_data.check_data(line_mod,0)[0])
+        break
     line_mod = line_mod + 1
 

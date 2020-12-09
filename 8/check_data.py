@@ -1,8 +1,8 @@
 # check_data
-# input: line to substitute
+# input: line to substitute, change_made
 # output: acc_count,loop_detected
 
-def check_data(line_mod):
+def check_data(line_mod,change_made):
     infile = open('input.txt','r')
     acc_count = 0
     op_num = 0
@@ -16,7 +16,6 @@ def check_data(line_mod):
             operation.append((op_num,[line.partition(' ')[0],str.rstrip(line.partition(' ')[2])]))
             op_num = op_num+1
 
-    change_made = 0
     if operation[line_mod][1][0] == 'jmp' and change_made == 0:
         curr_op_acc_val = operation[line_mod][1][1]
         del operation[line_mod]
