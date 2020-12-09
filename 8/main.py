@@ -17,86 +17,16 @@
 # nop stands for No OPeration - it does nothing. The instruction immediately below it
 # is executed next.
 
+import check_data
 
-infile = open('input.txt','r')
-acc_count = 0
-op_num = 0
-operation = []
+line_mod = 0
+terminate = False
 
-with infile as f:
-    for line in f:
-        operation.append((op_num,[line.partition(' ')[0],str.rstrip(line.partition(' ')[2])]))
-        op_num = op_num+1
-        if 'EOF' in line:
-            break
+print('Part 1 Accumulator Count:',check_data.check_data(0)[0])
 
-op_completed = []
-curr_op_num = 0
-loop_control = True
-line_to_change = 0
-last_line_changed = 0
-change_count = 0
-curr_op1 = []
+while terminate is False:
+    if check_data.check_data(line_mod)[1] == 0:
+        print('Part 2 Accumulator Count:',check_data.check_data(line_mod)[0])
+        terminate = True
+    line_mod = line_mod + 1
 
-def change_op(curr_op):
-    if curr_op == 'nop':
-       curr_op = 'jmp'
-    if curr_op == 'jmp':
-       curr_op = 'nop'
-    if curr_op == 'acc':
-       curr_op = 'acc'
-    return(curr_op)
-
-while loop_control:
-    # print(curr_op_num)
-    # print(acc_count)
-    # print(operation)
-    if curr_op_num == len(operation):
-        print('Accumulator:', acc_count)
-        break
-    print(acc_count)
-    print(operation[curr_op_num])
-    curr_op = operation[curr_op_num][1][0]
-    # print(op_completed)
-    if curr_op_num not in op_completed:
-        if curr_op == 'acc':
-            acc_inc = int(operation[curr_op_num][1][1])
-            acc_count = acc_count + acc_inc
-            op_completed.append(curr_op_num)
-            curr_op_num = curr_op_num + 1
-        if curr_op == 'jmp':
-            op_completed.append(curr_op_num)
-            curr_op_num = curr_op_num + int(operation[curr_op_num][1][1])
-        if curr_op == 'nop':
-            curr_op_num = curr_op_num + 1
-        # print(op_completed)
-    else:
-        print('Still Broken')
-        print('Accumulator:', acc_count)
-        print('Operation:', operation[line_to_change])
-        print('Line:', line_to_change)
-        if change_count == 20:
-            break
-        op_completed = []
-        acc_count = 0
-        line_to_change_prev = line_to_change - 1
-        print('Prev Line:',line_to_change_prev)
-        print('prev_op',curr_op1)
-        operation.insert(line_to_change_prev,curr_op1)
-        curr_op1 = operation[line_to_change]
-        print(operation)
-        curr_op = operation[line_to_change][1][0]
-        curr_op_line = (line_to_change,[change_op(curr_op),operation[curr_op_num][1][1]])
-        operation.insert(line_to_change,curr_op_line)
-        change_count = change_count +1
-        print('Operation New:',operation[line_to_change])
-        line_to_change = line_to_change + 1
-        curr_op = 0
-
-print(op_completed)
-print('Accumulator:',acc_count)
-print(len(operation))
-
-# if line.partition(' ')[0] == 'acc':
-# acc_count = acc_count line.partition(' ')[2]
-# if line.partition(' ')[0] == 'jmp':
