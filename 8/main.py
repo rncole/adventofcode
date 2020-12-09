@@ -36,16 +36,16 @@ loop_control = True
 line_to_change = 0
 last_line_changed = 0
 change_count = 0
-current_op1 = []
+curr_op1 = []
 
-def change_op(current_op):
-    if current_op == 'nop':
-       current_op = 'jmp'
-    if current_op == 'jmp':
-       current_op = 'nop'
-    if current_op == 'acc':
-        current_op = 'acc'
-    return(current_op)
+def change_op(curr_op):
+    if curr_op == 'nop':
+       curr_op = 'jmp'
+    if curr_op == 'jmp':
+       curr_op = 'nop'
+    if curr_op == 'acc':
+       curr_op = 'acc'
+    return(curr_op)
 
 while loop_control:
     # print(curr_op_num)
@@ -54,6 +54,8 @@ while loop_control:
     if curr_op_num == len(operation):
         print('Accumulator:', acc_count)
         break
+    print(acc_count)
+    print(operation[curr_op_num])
     curr_op = operation[curr_op_num][1][0]
     # print(op_completed)
     if curr_op_num not in op_completed:
@@ -69,23 +71,27 @@ while loop_control:
             curr_op_num = curr_op_num + 1
         # print(op_completed)
     else:
-        break
-        # print('Still Broken')
-        # print('Accumulator:', acc_count)
-        # print('Operation:', operation[line_to_change])
-        # print('Line:', line_to_change)
-        # if change_count == 1:
-        #     break
-        # op_completed = []
-        # acc_count = 0
-        # operation[line_to_change-1] = current_op1
-        # current_op1 = operation[line_to_change]
-        # current_op = operation[line_to_change][1][0]
-        # operation[line_to_change][1][0] = change_op(current_op)
-        # change_count = change_count +1
-        # print('Operation New:',operation[line_to_change])
-        # line_to_change = line_to_change + 1
-        # current_op = 0
+        print('Still Broken')
+        print('Accumulator:', acc_count)
+        print('Operation:', operation[line_to_change])
+        print('Line:', line_to_change)
+        if change_count == 20:
+            break
+        op_completed = []
+        acc_count = 0
+        line_to_change_prev = line_to_change - 1
+        print('Prev Line:',line_to_change_prev)
+        print('prev_op',curr_op1)
+        operation.insert(line_to_change_prev,curr_op1)
+        curr_op1 = operation[line_to_change]
+        print(operation)
+        curr_op = operation[line_to_change][1][0]
+        curr_op_line = (line_to_change,[change_op(curr_op),operation[curr_op_num][1][1]])
+        operation.insert(line_to_change,curr_op_line)
+        change_count = change_count +1
+        print('Operation New:',operation[line_to_change])
+        line_to_change = line_to_change + 1
+        curr_op = 0
 
 print(op_completed)
 print('Accumulator:',acc_count)
