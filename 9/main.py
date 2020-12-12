@@ -26,4 +26,13 @@ for i in range(xmas_data[25][0],len(xmas_data)):
 
 for j in range(0,len(pair_list)-1):
     if not pair_list[j][1]:
-        print('XMAS Invalid Sequence:',pair_list[j][0][1])
+        xmas_invalid = pair_list[j][0][1]
+        print('XMAS Invalid Sequence:',xmas_invalid)
+
+# Part 2 Start
+# for k in range(0,pair_list[]):
+#     xmas_data_curr = xmas_data[k][1]
+#     xmas_data_prev = xmas_data[k-1][1]
+#     sum_invalid = xmas_data_curr + xmas_data_prev
+#     if sum_invalid == xmas_invalid:
+#         print('Sum of Invalid:',sum_invalid)
