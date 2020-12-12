@@ -27,12 +27,20 @@ for i in range(xmas_data[25][0],len(xmas_data)):
 for j in range(0,len(pair_list)-1):
     if not pair_list[j][1]:
         xmas_invalid = pair_list[j][0][1]
+        xmas_vuln = pair_list[j]
         print('XMAS Invalid Sequence:',xmas_invalid)
 
 # Part 2 Start
-# for k in range(0,pair_list[]):
-#     xmas_data_curr = xmas_data[k][1]
-#     xmas_data_prev = xmas_data[k-1][1]
-#     sum_invalid = xmas_data_curr + xmas_data_prev
-#     if sum_invalid == xmas_invalid:
-#         print('Sum of Invalid:',sum_invalid)
+xmas_data_vuln_id = xmas_vuln[0][0]
+sum_to_check = xmas_invalid
+
+for i in range(0,xmas_data_vuln_id-1):
+    for j in range(i,len(pair_list)-1):
+        check_set_vuln = list(xmas_data[i:j])
+        check_set_vuln = [int(row[1]) for row in check_set_vuln]
+        sum_check = sum(check_set_vuln)
+        if int(sum_check) == int(xmas_invalid):
+            print('Range:',i,' to ',j)
+            xmas_vuln_list = check_set_vuln
+
+print('Min in Range:', min(xmas_vuln_list), '\nMax in Range:', max(xmas_vuln_list), '\nSum of Min/Max in Range:', min(xmas_vuln_list)+max(xmas_vuln_list))
