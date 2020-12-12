@@ -6,9 +6,9 @@ import itertools
 infile = open('input.txt', 'r')
 xmas_data = []
 seq = 0
-xmas_vuln = []
+xmas_vulnerability = []
 xmas_invalid = 0
-xmas_vuln_list = []
+xmas_vulnerability_list = []
 
 with infile as f:
     for line in f:
@@ -32,21 +32,21 @@ for i in range(xmas_data[25][0], len(xmas_data)):
 for j in range(0, len(pair_list)-1):
     if not pair_list[j][1]:
         xmas_invalid = pair_list[j][0][1]
-        xmas_vuln = pair_list[j]
+        xmas_vulnerability = pair_list[j]
         print('XMAS Invalid Sequence:', xmas_invalid)
 
 # Part 2 Start
-xmas_data_vuln_id = xmas_vuln[0][0]
+xmas_data_vulnerability_id = xmas_vulnerability[0][0]
 sum_to_check = xmas_invalid
 
-for i in range(0, xmas_data_vuln_id-1):
+for i in range(0, xmas_data_vulnerability_id - 1):
     for j in range(i, len(pair_list)-1):
-        check_set_vuln = list(xmas_data[i:j])
-        check_set_vuln = [int(row[1]) for row in check_set_vuln]
-        sum_check = sum(check_set_vuln)
+        check_set_vulnerability = list(xmas_data[i:j])
+        check_set_vulnerability = [int(row[1]) for row in check_set_vulnerability]
+        sum_check = sum(check_set_vulnerability)
         if int(sum_check) == int(xmas_invalid):
             print('Range:', i, ' to ', j)
-            xmas_vuln_list = check_set_vuln
+            xmas_vulnerability_list = check_set_vulnerability
 
-print('Min in Range:', min(xmas_vuln_list), '\nMax in Range:', max(xmas_vuln_list),
-      '\nSum of Min/Max in Range:', min(xmas_vuln_list)+max(xmas_vuln_list))
+print('Min in Range:', min(xmas_vulnerability_list), '\nMax in Range:', max(xmas_vulnerability_list),
+      '\nSum of Min/Max in Range:', min(xmas_vulnerability_list) + max(xmas_vulnerability_list))
