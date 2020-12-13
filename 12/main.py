@@ -143,6 +143,7 @@ print('Manhattan Distance:', abs(int(ship_position[0])) + abs(int(ship_position[
 
 ship_position = [0, 0, 'E']
 waypoint_position = [10, 1]
+waypoint_offset = []
 
 for i in range(0, len(ship_movement)):
     if ship_movement[i][0] == 'R':
