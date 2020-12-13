@@ -16,7 +16,7 @@ ship_position = [0, 0, 'E']
 # print(ship_movement[1][1])
 turned = 0
 
-for i in range(0, len(ship_movement)-1):
+for i in range(0, len(ship_movement)):
     if ship_movement[i][0] == 'R':
         # print('turning right')
         if ship_position[2] == 'E':
