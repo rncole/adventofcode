@@ -20,7 +20,6 @@ print('time =',t)
 print('Bus Routes = ',bus_routes)
 earliest_route = ''
 
-i = 0
 t = t_initial
 while earliest_route == '':
     for i in range(0, len(bus_routes)):
