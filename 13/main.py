@@ -18,12 +18,10 @@ while len(bus_routes_tmp)>0:
 
 print('time =',t)
 print('Bus Routes = ',bus_routes)
-# print(len(bus_routes))
 earliest_route = ''
 
 i = 0
 t = t_initial
-# print(len(bus_routes))
 while earliest_route == '':
     for i in range(0, len(bus_routes)):
         if bus_routes[i] != 'x':
@@ -47,4 +45,3 @@ for i in range(0, len(bus_routes)):
 
 # Using sympy Number Theory package (https://docs.sympy.org/latest/modules/ntheory.html):
 print('Part 2 Solution:', solve_congruence(*bus_routes_w_pos)[0])
-
