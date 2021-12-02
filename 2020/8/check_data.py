@@ -3,7 +3,7 @@
 # output: acc_count,loop_detected
 
 def check_data(line_mod,change_made):
-    infile = open('input.txt','r')
+    infile = open('input.txt', 'r')
     acc_count = 0
     op_num = 0
     operation = []

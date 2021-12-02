@@ -1,6 +1,6 @@
 # Advent of Code Day 13: Shuttle Search
 from sympy.ntheory.modular import solve_congruence
-infile = open('input.txt','r')
+infile = open('input.txt', 'r')
 
 input = []
 with infile as f:

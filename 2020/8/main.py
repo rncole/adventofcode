@@ -20,11 +20,11 @@
 import check_data
 line_mod = 0
 
-print('Part 1 Accumulator Count:',check_data.check_data(line_mod,1)[0])
+print('Part 1 Accumulator Count:', check_data.check_data(line_mod, 1)[0])
 
 while True:
-    if check_data.check_data(line_mod,0)[1] == 0:
-        print('Part 2 Accumulator Count:',check_data.check_data(line_mod,0)[0])
+    if check_data.check_data(line_mod, 0)[1] == 0:
+        print('Part 2 Accumulator Count:', check_data.check_data(line_mod, 0)[0])
         break
     line_mod = line_mod + 1
 

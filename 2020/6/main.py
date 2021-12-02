@@ -72,7 +72,7 @@ import functools
 
 # Thanks to Jeremy for helping me restructure to get the data to work much better than the above, which worked for the
 # first part only.
-infile = open('input.txt','r')
+infile = open('input.txt', 'r')
 groups = []
 with infile as f:
     group = []

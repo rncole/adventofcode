@@ -2,7 +2,7 @@
 import copy
 import functools
 
-infile = open('input.txt','r')
+infile = open('input.txt', 'r')
 
 seating_map_tmp = []
 with infile as f:

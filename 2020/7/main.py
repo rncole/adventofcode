@@ -2,7 +2,7 @@
 
 import functools
 
-infile = open('input.txt','r')
+infile = open('input.txt', 'r')
 groups = []
 outer_cont_sg = []
 outer_bag = []
