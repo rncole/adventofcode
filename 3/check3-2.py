@@ -46,7 +46,6 @@ print(bit_count, i)
 
 digit0 = round(bit_count[0]/i)
 
-
 gamma = str(round(bit_count[0]/i)) + str(round(bit_count[1]/i)) + str(round(bit_count[2]/i)) \
         + str(round(bit_count[3]/i)) + str(round(bit_count[4]/i)) + str(round(bit_count[5]/i)) \
         + str(round(bit_count[6]/i)) + str(round(bit_count[7]/i)) + str(round(bit_count[8]/i)) \
@@ -90,7 +89,6 @@ while k < len(o2_gen[0]):
     while m < len(o2_gen_test):
         if freq < len(o2_gen_test)/2:
             if o2_gen_test[m][1] == 0:
-                #print(o2_gen_test[m])
                 o2_gen.append(o2_gen_test[m][0])
         else:
             if o2_gen_test[m][1] == 1:
@@ -133,22 +131,12 @@ while k < len(co2_scr[0]):
         co2_scr = []
 
         while m < len(co2_scr_test):
-            #print("Freq:", freq)
-            #print("Len: ", len(co2_scr_test)/2)
-            #print("m: ", m)
-            #print("k:", k)
-            #
-            # IT IS ISOLATING THE CORRECT VALUE, HOWEVER, IT IS OVERRUNNING IN THE SEQUENCE AND ERRORING!
-            #
             if freq >= len(co2_scr_test)/2:
                 if co2_scr_test[m][1] == 0:
-                    #print(o2_gen_test[m])
                     co2_scr.append(co2_scr_test[m][0])
             else:
                 if co2_scr_test[m][1] == 1:
                     co2_scr.append(co2_scr_test[m][0])
-           # print(co2_scr)
-
             m += 1
         co2_scr_check = co2_scr
     co2_scr_test = []
