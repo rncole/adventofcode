@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-# Advent of code 2021 challenge 1
+# Advent of code 2021 challenge 2
 import string as st
 import functools
 
