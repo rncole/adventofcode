@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 # Advent of code 2021 challenge 6
+import timeit
+start = timeit.timeit()
 
 file = open('input', 'r')
 #file = open('sample', 'r')
@@ -52,4 +54,6 @@ while days < 256:
             lanternfish_smart[8] = lanternfish_smart_temp.get(8)
     lanternfish_smart_temp = {}
     days += 1
-print("The number of lanternfish after", days, "days is" , sum(lanternfish_smart.values()))
+end = timeit.timeit()
+print("The number of lanternfish after", days, "days is" , sum(lanternfish_smart.values()), "calculated in ", \
+      end, "seconds")
