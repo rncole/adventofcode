@@ -37,5 +37,5 @@ for i in fuel_cost:
         fuel_cost[i] = fuel_cost.get(i) + fuel_expended
 
 min_fuel_cost_location = min(fuel_cost, key=fuel_cost.get)
-print(fuel_cost)
-print("The best position is", min_fuel_cost_location, "using", fuel_cost.get(min_fuel_cost_location), "fuel")
+#print(fuel_cost)
+print("The best position is", min_fuel_cost_location, "using", int(fuel_cost.get(min_fuel_cost_location)), "fuel")
