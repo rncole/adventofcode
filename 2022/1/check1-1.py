@@ -26,4 +26,3 @@ sorted_calories = sorted(calories,reverse=True)[:3]
 
 print("Elf",elf_num_max_calories,"has the most calories with",elf_calories)
 print("The top 3 Elves are carrying",sum(sorted_calories),"calories")
-
