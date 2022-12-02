@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Advent of code 2021 challenge 6
+# Advent of code 2021 challenge 7 Part 2
 import math
 
 file = open('input', 'r')

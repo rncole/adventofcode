@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Advent of code 2021 challenge 6
+# Advent of code 2021 challenge 7 Part 1
 
 file = open('input', 'r')
 #file = open('sample', 'r')
@@ -25,6 +25,7 @@ crab_distribution = dict(sorted(crab_distribution.items()))
 sum_crabs = sum(crab_list)
 
 fuel_cost = dict.fromkeys(crab_distribution)
+
 for i in fuel_cost:
     fuel_cost[i] = 0
     for j in crab_distribution:
