@@ -8,7 +8,6 @@ file = open('input', 'r')
 
 priority_sum = 0
 
-
 with file as f:
     for line in f:
         line_length = len(line.strip())
@@ -27,9 +26,3 @@ with file as f:
         priority_sum += item_priority
 
 print("Sum of Priorities is:", priority_sum)
-
-
-
-
-
-

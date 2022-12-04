@@ -33,6 +33,7 @@ for i in range(1, max_group+1):
             elf_3_ruck = elves_rucksacks[0][2]
         j += 1
     #print(elf_1_ruck, elf_2_ruck, elf_3_ruck)
+
     common_item = set(elf_1_ruck) & set(elf_2_ruck) & set(elf_3_ruck)
     common_item = next(iter(common_item))
     if common_item.islower():
@@ -43,13 +44,8 @@ for i in range(1, max_group+1):
         print("No common Item or other issue in item:", common_item)
     print("Group Badge:", common_item, "\n  Priority:", item_priority)
     priority_sum += item_priority
+
     i += 1
     j = 1
 
 print("Sum of Priorities is:", priority_sum)
-
-
-
-
-
-
