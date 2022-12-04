@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 # Advent of code 2022 challenge 1
 import string as st
 import functools
@@ -22,7 +21,7 @@ with file as f:
 
 elf_num_max_calories = calories.index(max(calories))
 elf_calories = max(calories)
-sorted_calories = sorted(calories,reverse=True)[:3]
+sorted_calories = sorted(calories, reverse=True)[:3]
 
-print("Elf",elf_num_max_calories,"has the most calories with",elf_calories)
-print("The top 3 Elves are carrying",sum(sorted_calories),"calories")
+print("Elf", elf_num_max_calories, "has the most calories with", elf_calories)
+print("The top 3 Elves are carrying", sum(sorted_calories), "calories")
