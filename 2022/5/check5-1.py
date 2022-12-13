@@ -34,7 +34,6 @@ with file as f:
             del stacks[to_loc-1]
             stacks.append(new_to_stack)
             stacks.sort()
-            #print(stacks)
         if line == "\n":
             print("\nNext Section Start\n")
             section += 1

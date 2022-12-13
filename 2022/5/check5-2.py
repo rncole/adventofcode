@@ -26,6 +26,7 @@ with file as f:
             cur_to_stack = stacks[to_loc-1][1]
             new_from_stack = [from_loc, cur_from_stack[:-move_qty]]
             moved_crates = cur_from_stack[-move_qty:]
+            # No need to reverse for the CrateMover 9001, reversing commented
             # moved_crates.reverse()
             new_to_stack = [to_loc, cur_to_stack+moved_crates]
             del stacks[from_loc-1]
@@ -34,7 +35,6 @@ with file as f:
             del stacks[to_loc-1]
             stacks.append(new_to_stack)
             stacks.sort()
-            #print(stacks)
         if line == "\n":
             print("\nNext Section Start\n")
             section += 1
